@@ -1,0 +1,19 @@
+### model
+model_name_or_path: './Llama-3.2-1B-Instruct-ChineseSafety-Enhanced/checkpoint-9638'
+#adapter_name_or_path: 
+
+### method
+#finetuning_type: lora
+
+### dataset
+task: mmlu_test  # choices: [mmlu_test, ceval_validation, cmmlu_test]
+#template: fewshot
+template: llama3
+lang: en
+n_shot: 5
+
+### output
+save_dir: saves/eval/Llama-3.2-1B-Instruct-ChineseSafety-Enhanced_mmlu_eval
+
+### eval
+batch_size: 2
