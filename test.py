@@ -1,13 +1,16 @@
 import torch
 from transformers import pipeline
 
+# 将模型移动到 GPU（如果有的话）
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 #model_id = "/home/project/Llama/Llama-3.2-1B-Instruct"
 model_id = "/home/project/Llama-3.2-1B-Instruct-ChineseSafety-Enhanced/checkpoint-9638"
 pipe = pipeline(
     "text-generation",
     model=model_id,
     torch_dtype=torch.bfloat16,
-    device_map="auto",
+    device_map=device,
 )
 
 def chat(messages):
